@@ -4,13 +4,13 @@
 import Express from "express";
 import cors from "cors";
 import { Server } from "http";
-//import { initialiseRoutes } from './routes/routes';
-//import { printNewLine } from './helpers/helpers';
+import { initialiseRoutes } from "./routes/routes";
+import { printNewLine } from "./helpers/helpers";
 
-const PORT = 8080;
+const PORT = 8081;
 
 try {
-  //printNewLine();
+  printNewLine();
 
   console.log("💫 Initialising Server...");
   const app = Express();
@@ -24,12 +24,12 @@ try {
   console.log("👉 Enabling CORS...");
   app.use(cors());
 
-  //initialiseRoutes(app);
+  initialiseRoutes(app);
 
   const server = app
     .listen(PORT, () => {
       console.log(`⭐ Server is now listening on port: ⚓ ${PORT} ⭐`);
-      //printNewLine();
+      printNewLine();
       console.log(
         `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
@@ -37,7 +37,7 @@ try {
         `⭐    Health check at "http://localhost:${PORT}/health"            ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/calories/"        ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/calories/"              ⭐`
       );
       console.log(
         `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
