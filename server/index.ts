@@ -1,5 +1,8 @@
-import * as express from "express";
+//import * as express from "express";
 //import * as cors from 'cors';
+
+import Express from "express";
+import cors from "cors";
 import { Server } from "http";
 //import { initialiseRoutes } from './routes/routes';
 //import { printNewLine } from './helpers/helpers';
@@ -10,16 +13,16 @@ try {
   //printNewLine();
 
   console.log("💫 Initialising Server...");
-  const app = express();
+  const app = Express();
 
   console.log("👉 Enabling JSON middleware...");
-  app.use(express.json());
+  app.use(Express.json());
 
   console.log("👉 Enabling URL-Encoded middleware...");
-  app.use(express.urlencoded({ extended: true }));
+  app.use(Express.urlencoded({ extended: true }));
 
   console.log("👉 Enabling CORS...");
-  //app.use(cors());
+  app.use(cors());
 
   //initialiseRoutes(app);
 
