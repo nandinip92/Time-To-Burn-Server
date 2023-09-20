@@ -37,10 +37,7 @@ try {
         `⭐    Health check at "http://localhost:${PORT}/health"            ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/misdemeanours/3"        ⭐`
-      );
-      console.log(
-        `⭐    🗺️  Try changing the number of misdemeanours requested!    ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/calories/"        ⭐`
       );
       console.log(
         `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
