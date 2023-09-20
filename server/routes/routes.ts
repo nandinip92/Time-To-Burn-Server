@@ -1,12 +1,13 @@
 import * as express from "express";
 import { Express } from "express";
+import { getNutritionData } from "../services/nutrition-data_service";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
 
   addHealthCheck(app);
 
-  //addAPIRoutes(app);
+  addAPIRoutes(app);
 }
 
 function addHealthCheck(app: Express) {
@@ -27,4 +28,32 @@ function addHealthCheck(app: Express) {
 
   console.log("🛠️  Applying base router to Express server...");
   app.use("/", baseRouter);
+}
+
+// this function adds all the routes we can access by going to /api/[someRoute]
+function addAPIRoutes(app: Express) {
+  console.log("🛠️  Creating API router...");
+
+  const apiRouter = express.Router();
+  apiRouter.use((req, res, next) => {
+    // we'll use this router to return specifically JSON
+    res.setHeader("Content-Type", "application/json");
+    next();
+  });
+  //this route allows clients to GET nutrition
+  console.log("📨  Adding GET nutrition route...");
+  apiRouter.get("/nutrition/:ingredients", async (req, res) => {
+    const ingredients = req.params.ingredients;
+    // console.log("Ingredients--->", ingredients);
+    if (ingredients === "") {
+      res.status(500).send({ message: "Invalid ingredient list" });
+      return;
+    }
+
+    const result = await getNutritionData(ingredients);
+    //console.log("Result--->", result);
+    res.status(200).send(result);
+  });
+  console.log("🛠️  Applying API router to Express server...");
+  app.use("/api", apiRouter);
 }
