@@ -4,10 +4,12 @@
 import Express from "express";
 import cors from "cors";
 import { Server } from "http";
+import * as dotenv from "dotenv";
 import { initialiseRoutes } from "./routes/routes";
 import { printNewLine } from "./helpers/helpers";
-
-const PORT = 8081;
+//const environment = process.env.NODE_ENV || "dev";
+dotenv.config({ path: `.env.dev` });
+const PORT = process.env.PORT;
 
 try {
   printNewLine();
@@ -31,16 +33,25 @@ try {
       console.log(`⭐ Server is now listening on port: ⚓ ${PORT} ⭐`);
       printNewLine();
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
       console.log(
-        `⭐    Health check at "http://localhost:${PORT}/health"            ⭐`
+        `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/calories/"              ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/"                                                  ⭐`
       );
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato"                                   ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"        ⭐`
+      );
+      console.log(
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
     })
     .on("error", (error) => {
