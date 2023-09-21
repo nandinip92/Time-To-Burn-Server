@@ -45,7 +45,7 @@ try {
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato"                                   ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"                                   ⭐`
       );
       console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"        ⭐`

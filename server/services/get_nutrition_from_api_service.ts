@@ -1,11 +1,11 @@
 import * as dotenv from "dotenv";
 import fetch from "node-fetch";
-import { Nutrition } from "../types/nutrition.types";
+import { IngredientsNutrition } from "../types/nutrition.types";
 dotenv.config({ path: `.env.dev` });
 
 export async function getNutritionDataFromAPI(
   url: string
-): Promise<Array<Nutrition>> {
+): Promise<IngredientsNutrition> {
   const APIKey = { "x-api-key": process.env.X_API_KEY as string };
   //const nutrition = []
   try {
@@ -19,5 +19,5 @@ export async function getNutritionDataFromAPI(
     console.log(error);
   }
 
-  return [];
+  return { items: [] };
 }
