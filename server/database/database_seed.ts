@@ -26,8 +26,6 @@ export const populateDummyData = async () => {
   });
   const exerciseCount = (await Exercise.findAll()).length;
   console.log(
-    `📚 ${exerciseCount} exercise${
-      exerciseCount !== 1 ? "s" : ""
-    } added to table`
+    `${exerciseCount} exercise${exerciseCount !== 1 ? "s" : ""} added to table`
   );
 };
