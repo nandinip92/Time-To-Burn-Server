@@ -2,7 +2,6 @@ import * as express from "express";
 import { Express } from "express";
 import { getNutritionData } from "../services/nutrition-data_service";
 import { getTotalCalories } from "../services/get_total_calories";
-import { NutritionResult } from "../services/get_total_calories";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
@@ -52,10 +51,12 @@ function addAPIRoutes(app: Express) {
       return;
     }
 
-    const ingredientsInfo = await getNutritionData(ingredients);
-    //console.log("Result--->", result);
-    const result = await getTotalCalories(ingredientsInfo);
-    //res.status(200).send(result);
+    const nutrition = await getNutritionData(ingredients);
+    console.log("nutrition--->", nutrition);
+    //res.status(200).send(ingredientsInfo);
+
+    const result = await getTotalCalories(nutrition);
+    res.status(200).send(result);
   });
   console.log("🛠️  Applying API router to Express server...");
   app.use("/api", apiRouter);
