@@ -1,5 +1,8 @@
-import { TotalCalories } from "../types/nutrition.types";
+import { CalBurnRate } from "../types/nutrition.types";
 
-export const getTimeToBurn = (caloriesToBurn: TotalCalories) => {
-  //const timeToBurn = ((exercise.calories)/caloriesToBurn.total_calories) * 60;
+export const getTimeToBurn = (burnRate: CalBurnRate) => {
+  const timeToBurn =
+    (burnRate.exercise.calsPerHour / burnRate.caloriesToBurn.total_calories) *
+    60;
+  return timeToBurn;
 };
