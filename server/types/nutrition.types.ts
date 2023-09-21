@@ -12,3 +12,8 @@ export type Nutrition = {
   fiber_g: number;
   sugar_g: number;
 };
+
+export type TotalCalories = {
+  items: Nutrition[];
+  total_calories: number;
+};
