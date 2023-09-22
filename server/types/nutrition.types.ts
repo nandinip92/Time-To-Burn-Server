@@ -20,3 +20,11 @@ export type TotalCalories = {
   items: Nutrition[];
   total_calories: number;
 };
+export type Exercise = {
+  name: string;
+  calsPerHour: number;
+};
+export type CalBurnRate = {
+  caloriesToBurn: TotalCalories;
+  exercise: Exercise;
+};

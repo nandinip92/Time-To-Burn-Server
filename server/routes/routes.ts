@@ -2,6 +2,8 @@ import * as express from "express";
 import { Express } from "express";
 import { getNutritionData } from "../services/nutrition-data_service";
 import { getTotalCalories } from "../services/get_total_calories";
+// import { getTimeToBurn } from "../services/get_time_to_burn";
+import * as exercisesController from "../controllers/exercises_controller";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
@@ -56,8 +58,13 @@ function addAPIRoutes(app: Express) {
     //res.status(200).send(ingredientsInfo);
 
     const result = await getTotalCalories(nutrition);
+    // const requiredCals = await getTimeToBurn(result);
     res.status(200).send(result);
   });
+  //this route allows clients to GET exercises
+  console.log("📨  Adding GET exercise route...");
+  apiRouter.get("/exercises", exercisesController.getExercises);
+
   console.log("🛠️  Applying API router to Express server...");
   app.use("/api", apiRouter);
 }
