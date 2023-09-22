@@ -1,9 +1,9 @@
 import * as express from "express";
 import { Express } from "express";
-import { getNutritionData } from "../services/nutrition-data_service";
-import { getTotalCalories } from "../services/get_total_calories";
+import * as nutritionInfoController from "../controllers/nutrition_data_controller";
 // import { getTimeToBurn } from "../services/get_time_to_burn";
 import * as exercisesController from "../controllers/exercises_controller";
+import { getExercises } from "../services/exercises";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
@@ -45,25 +45,10 @@ function addAPIRoutes(app: Express) {
   });
   //this route allows clients to GET nutrition
   console.log("📨  Adding GET nutrition route...");
-  apiRouter.get("/nutrition/:ingredients", async (req, res) => {
-    const ingredients = req.params.ingredients;
-    // console.log("Ingredients--->", ingredients);
-    if (ingredients === "") {
-      res.status(500).send({ message: "Invalid ingredient list" });
-      return;
-    }
-
-    const nutrition = await getNutritionData(ingredients);
-    console.log("nutrition--->", nutrition);
-    //res.status(200).send(ingredientsInfo);
-
-    const result = await getTotalCalories(nutrition);
-    // const requiredCals = await getTimeToBurn(result);
-    res.status(200).send(result);
-  });
-  //this route allows clients to GET exercises
-  console.log("📨  Adding GET exercise route...");
-  apiRouter.get("/exercises", exercisesController.getExercises);
+  apiRouter.get(
+    "/nutrition/:ingredients",
+    nutritionInfoController.getNutritionInfo
+  );
 
   console.log("🛠️  Applying API router to Express server...");
   app.use("/api", apiRouter);
