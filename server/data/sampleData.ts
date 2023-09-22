@@ -1,7 +1,4 @@
-import { IngredientsNutrition } from "../types/nutrition.types";
-import { getNutritionDataFromAPI } from "./get_nutrition_from_api_service";
-
-const sampleData = {
+export const sampleNutritionData = {
   items: [
     {
       name: "carrots",
@@ -33,14 +30,3 @@ const sampleData = {
     },
   ],
 };
-
-export async function getNutritionData(
-  ingredients: string
-): Promise<IngredientsNutrition> {
-  const url = process.env.API_URL + ingredients;
-  console.log("URL--->" + url);
-  //return await getNutritionDataFromAPI(url);
-
-  return sampleData;
-  //return [{ name: "HELLOOOOO......!!!" }] as Nutrition[];
-}

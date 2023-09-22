@@ -1,31 +1,32 @@
-import { Exercise } from "../models/exercise";
+import { sequelize } from "../database/database";
+import { ExerciseType, ExerciseTypeWithTime } from "../types/nutrition.types";
 
-export const getExercises = async () => {
-  return Exercise.findAll();
+export const getExercises = async (): Promise<Array<ExerciseType>> => {
+  const [exerciseInfo, metadata] = await sequelize.query(
+    "SELECT name, calsPerHour FROM Exercises"
+  );
+  return exerciseInfo as ExerciseType[];
 };
 
-// export const getExercise = async (exerciseId: number) => {
-// 	return Exercise.findOne({
-// 		where: { exerciseId },
-// 	});
-// };
+export const getTimeToBurn = async (
+  exerciseInfo: ExerciseType[],
+  total_calories: number
+) => {
+  //: Promise<ExerciseTypeWithTime[]>
+  const exercisesWithTime = exerciseInfo.map((exercise) =>
+    getTime(exercise as ExerciseTypeWithTime, total_calories)
+  );
+};
 
-// export const saveExercise = async (exercise: Exercise) => {
-// 	return Exercise.create<Exercise>(exercise);
-// };
+const getTime = (exercise: ExerciseTypeWithTime, total_calories: number) => {
+  const inHours = total_calories / exercise.calsPerHour;
+  const inMinutes = inHours * 60;
+  const inSeconds = inMinutes * 60;
 
-// // User Story 4 - Update Book By Id Solution
-// export const updateExercise = async (exerciseId: number, exercise: Exercise) => {
-// 	return Exercise.update(exercise, {
-// 		where: {
-// 			exerciseId,
-// 		},
-// 	});
-// };
-
-// // Delete Book By Id Solution
-// export const deleteExercise = async (exerciseId: number) => {
-// 	return Exercise.destroy({
-// 		where: { exerciseId },
-// 	});
-// };
+  exercise["time_to_burn_total_cals"] = {
+    seconds: Math.round((inSeconds + Number.EPSILON) * 100) / 100,
+    minutes: Math.round((inMinutes + Number.EPSILON) * 100) / 100,
+    hours: Math.round((inHours + Number.EPSILON) * 100) / 100,
+  };
+  // return exercise;
+};
