@@ -1,9 +1,6 @@
 import * as express from "express";
 import { Express } from "express";
 import * as nutritionInfoController from "../controllers/nutrition_data_controller";
-// import { getTimeToBurn } from "../services/get_time_to_burn";
-import * as exercisesController from "../controllers/exercises_controller";
-import { getExercises } from "../services/exercises";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
