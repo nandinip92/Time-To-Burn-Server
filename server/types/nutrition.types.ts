@@ -16,15 +16,17 @@ export type Nutrition = {
 export type IngredientsNutrition = {
   items: Nutrition[];
 };
-export type TotalCalories = {
-  items: Nutrition[];
-  total_calories: number;
-};
-export type Exercise = {
+// export type TotalCalories = {
+//   items: Nutrition[];
+//   total_calories: number;
+// };
+export type ExerciseType = {
+  id: number;
   name: string;
   calsPerHour: number;
 };
 export type CalBurnRate = {
-  caloriesToBurn: TotalCalories;
-  exercise: Exercise;
+  items: Nutrition[];
+  total_calories: number;
+  exercises: ExerciseType[];
 };
