@@ -16,12 +16,8 @@ export type Nutrition = {
 export type IngredientsNutrition = {
   items: Nutrition[];
 };
-// export type TotalCalories = {
-//   items: Nutrition[];
-//   total_calories: number;
-// };
+
 export type ExerciseType = {
-  id: number;
   name: string;
   calsPerHour: number;
 };
@@ -29,4 +25,15 @@ export type CalBurnRate = {
   items: Nutrition[];
   total_calories: number;
   exercises: ExerciseType[];
+};
+
+export type TimeRequiresToBurn = {
+  seconds: number;
+  minutes: number;
+  hours: number;
+};
+export type ExerciseTypeWithTime = {
+  name: string;
+  calsPerHour: number;
+  time_to_burn_total_cals: TimeRequiresToBurn;
 };

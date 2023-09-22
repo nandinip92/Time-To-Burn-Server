@@ -15,10 +15,12 @@ export const getNutritionInfo = async (req: Request, res: Response) => {
   const total_calories = await nutritionService.getTotalCalories(nutrition);
   //res.status(200).send(total_calories);
   const exerciseInfo = await exercisesService.getExercises();
+  await exercisesService.getTimeToBurn(exerciseInfo, total_calories);
   const result: CalBurnRate = {
     items: nutrition.items,
     total_calories: total_calories,
     exercises: exerciseInfo,
   };
+
   res.status(200).send(result);
 };
