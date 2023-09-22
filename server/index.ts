@@ -7,22 +7,13 @@ import { Server } from "http";
 import * as dotenv from "dotenv";
 import { initialiseRoutes } from "./routes/routes";
 import { printNewLine } from "./helpers/helpers";
-
-import { populateDummyData } from "./database/database_seed";
 //const environment = process.env.NODE_ENV || "dev";
 dotenv.config({ path: `.env.dev` });
 const PORT = process.env.PORT;
 
-// const environment = process.env.NODE_ENV || "dev";
-// dotenv.config({ path: `.env.${environment}` });
-
-// const PORT = process.env.PORT;
-
-// console.log(`🌍 Running in ${environment} environment`);
-
 try {
   printNewLine();
-  populateDummyData();
+
   console.log("💫 Initialising Server...");
   const app = Express();
 
@@ -41,7 +32,6 @@ try {
     .listen(PORT, () => {
       console.log(`⭐ Server is now listening on port: ⚓ ${PORT} ⭐`);
       printNewLine();
-
       console.log(
         `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
