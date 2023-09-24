@@ -2,10 +2,16 @@ import { sequelize } from "../database/database";
 import { ExerciseType, ExerciseTypeWithTime } from "../types/nutrition.types";
 
 export const getExercises = async (): Promise<Array<ExerciseType>> => {
-  const [exerciseInfo, metadata] = await sequelize.query(
-    "SELECT name, calsPerHour FROM Exercises"
-  );
-  return exerciseInfo as ExerciseType[];
+  let exerciseInfo: ExerciseType[] = [];
+  try {
+    const [info, metadata] = await sequelize.query(
+      "SELECT name, calsPerHour FROM Exercises"
+    );
+    exerciseInfo = info as ExerciseType[];
+  } catch (error) {
+    console.log(error);
+  }
+  return exerciseInfo;
 };
 
 export const getTimeToBurn = async (
@@ -28,5 +34,6 @@ const getTime = (exercise: ExerciseTypeWithTime, total_calories: number) => {
     minutes: Math.round((inMinutes + Number.EPSILON) * 100) / 100,
     hours: Math.round((inHours + Number.EPSILON) * 100) / 100,
   };
+  //As Data is inside the exercise array there is no need for a return statement
   // return exercise;
 };

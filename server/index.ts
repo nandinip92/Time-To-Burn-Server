@@ -42,9 +42,6 @@ try {
         `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/"                                                  ⭐`
-      );
-      console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
       );
       console.log(

@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 import fetch from "node-fetch";
 import { IngredientsNutrition, Nutrition } from "../types/nutrition.types";
 
-import { sampleNutritionData } from "../data/sampleData";
+import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
 
 //Function to call the actual API
 export async function getNutritionData(
@@ -10,33 +10,27 @@ export async function getNutritionData(
 ): Promise<IngredientsNutrition> {
   const url = process.env.API_URL + ingredients;
   return await getNutritionDataFromAPI(url);
-
-  //return sampleNutritionData;
+  //return sampleNutritionData; //Sample data for tesing the functions while developing
 }
 //Function to call API and get the Nutrition data of the ingredients from the API
 async function getNutritionDataFromAPI(
   url: string
 ): Promise<IngredientsNutrition> {
   const APIKey = { "x-api-key": process.env.X_API_KEY as string };
+  const nutritionResult: IngredientsNutrition = { items: [] };
   try {
     const apiResponse = await fetch(url, {
       headers: APIKey,
     });
-    const json = await apiResponse.json();
-    return json;
+    const json: IngredientsNutrition = await apiResponse.json();
+    //Calories externalAPI is giving a json return as {message:"Forbidden"} if invalid
+    if (json.items !== undefined) nutritionResult.items = json.items;
+    else console.log("Error from Calories external API call--->", json);
   } catch (error) {
     console.log(error);
   }
-
-  return { items: [] };
+  return nutritionResult;
 }
-
-const getCalories = (ingredient: Nutrition) => {
-  const calories = Object.entries(ingredient)
-    .filter(([key, value]) => key === "calories")
-    .pop();
-  return calories;
-};
 
 //Function to calculate the total calories
 export async function getTotalCalories(
@@ -55,3 +49,10 @@ export async function getTotalCalories(
 
   return total_calories as number;
 }
+
+const getCalories = (ingredient: Nutrition) => {
+  const calories = Object.entries(ingredient)
+    .filter(([key, value]) => key === "calories")
+    .pop();
+  return calories;
+};
