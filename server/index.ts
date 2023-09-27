@@ -13,11 +13,13 @@ import { populateDummyData } from "./database/database_seed";
 dotenv.config({ path: `.env.dev` });
 const PORT = process.env.PORT;
 
+console.log("💫 Initialising Server...");
+export const app = Express();
 try {
   printNewLine();
   populateDummyData();
-  console.log("💫 Initialising Server...");
-  const app = Express();
+  // console.log("💫 Initialising Server...");
+  // const app = Express();
 
   console.log("👉 Enabling JSON middleware...");
   app.use(Express.json());
@@ -40,6 +42,9 @@ try {
       );
       console.log(
         `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/"                                                  ⭐`
       );
       console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
