@@ -1,14 +1,22 @@
 import request from "supertest";
 import { app } from "../index";
+import { populateDummyData } from "../database/database_seed";
+import { teardown } from "../database/database";
 import * as nutritionService from "../services/nutrition";
 import { sampleDataResult, sampleNutritionData } from "../data/sampleData";
 import { CalBurnRate } from "../types/nutrition.types";
 
 jest.mock("../services/nutrition");
 //jest.mock("../services/exercises");
+beforeAll(async () => {
+  await populateDummyData();
+});
 
 afterEach(async () => {
   jest.clearAllMocks();
+});
+afterAll(async () => {
+  await teardown();
 });
 
 describe("GET /api/nutrition/:ingredients endpoint", () => {

@@ -1,8 +1,10 @@
 import { sequelize } from "../database/database";
+import { populateDummyData } from "../database/database_seed";
 import { ExerciseType, ExerciseTypeWithTime } from "../types/nutrition.types";
 
 export const getExercises = async (): Promise<Array<ExerciseType>> => {
   let exerciseInfo: ExerciseType[] = [];
+  await populateDummyData();
   try {
     const [info, metadata] = await sequelize.query(
       "SELECT name, calsPerHour FROM Exercises"
