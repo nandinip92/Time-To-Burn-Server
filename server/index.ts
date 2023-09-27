@@ -7,8 +7,6 @@ import { Server } from "http";
 import * as dotenv from "dotenv";
 import { initialiseRoutes } from "./routes/routes";
 import { printNewLine } from "./helpers/helpers";
-
-import { populateDummyData } from "./database/database_seed";
 //const environment = process.env.NODE_ENV || "dev";
 dotenv.config({ path: `.env.dev` });
 const PORT = process.env.PORT;
@@ -17,9 +15,6 @@ console.log("💫 Initialising Server...");
 export const app = Express();
 try {
   printNewLine();
-  populateDummyData();
-  // console.log("💫 Initialising Server...");
-  // const app = Express();
 
   console.log("👉 Enabling JSON middleware...");
   app.use(Express.json());
@@ -44,13 +39,10 @@ try {
         `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/"                                                  ⭐`
-      );
-      console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"                                   ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"           ⭐`
       );
       console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"        ⭐`
