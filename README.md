@@ -20,6 +20,10 @@ and get a final calculation of how much exercise would be needed to burn them of
 - Then created our own api for the exercises and created a sequelize in memory database to store the data when the server is running
 - Using these two data sources we were able to make all our calculations and return the data in the form that we wanted, so that it can be consumed by the frontend.
 
+### Architecture
+
+![time2BurnArchitecture](./images/timeToBurnArchitecture.jpg)
+
 ## How to Run
 
 ```
