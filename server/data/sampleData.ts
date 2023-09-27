@@ -1,5 +1,92 @@
-//3lb carrots and a chicken sandwich
+//onion
 export const sampleNutritionData = {
+  items: [
+    {
+      name: "onion",
+      calories: 44.7,
+      serving_size_g: 100,
+      fat_total_g: 0.2,
+      fat_saturated_g: 0,
+      protein_g: 1.4,
+      sodium_mg: 2,
+      potassium_mg: 35,
+      cholesterol_mg: 0,
+      carbohydrates_total_g: 10.1,
+      fiber_g: 1.4,
+      sugar_g: 4.7,
+    },
+  ],
+};
+
+export const sampleDataResult = {
+  items: [
+    {
+      name: "onion",
+      calories: 44.7,
+      serving_size_g: 100,
+      fat_total_g: 0.2,
+      fat_saturated_g: 0,
+      protein_g: 1.4,
+      sodium_mg: 2,
+      potassium_mg: 35,
+      cholesterol_mg: 0,
+      carbohydrates_total_g: 10.1,
+      fiber_g: 1.4,
+      sugar_g: 4.7,
+    },
+  ],
+  total_calories: 44.7,
+  exercises: [
+    {
+      name: "Running",
+      calsPerHour: 1074,
+      time_to_burn_total_cals: {
+        seconds: 149.83,
+        minutes: 2.5,
+        hours: 0.04,
+      },
+    },
+    {
+      name: "Jump Rope",
+      calsPerHour: 1070,
+      time_to_burn_total_cals: {
+        seconds: 150.39,
+        minutes: 2.51,
+        hours: 0.04,
+      },
+    },
+    {
+      name: "Taekwondo",
+      calsPerHour: 937,
+      time_to_burn_total_cals: {
+        seconds: 171.74,
+        minutes: 2.86,
+        hours: 0.05,
+      },
+    },
+    {
+      name: "Swimming",
+      calsPerHour: 892,
+      time_to_burn_total_cals: {
+        seconds: 180.4,
+        minutes: 3.01,
+        hours: 0.05,
+      },
+    },
+    {
+      name: "Running up Stairs",
+      calsPerHour: 819,
+      time_to_burn_total_cals: {
+        seconds: 196.48,
+        minutes: 3.27,
+        hours: 0.05,
+      },
+    },
+  ],
+};
+
+//3lb carrots and a chicken sandwich
+export const sampleNutritionData_2 = {
   items: [
     {
       name: "carrots",
@@ -32,7 +119,7 @@ export const sampleNutritionData = {
   ],
 };
 
-export const sampleDataResult = {
+export const sampleDataResult_2 = {
   items: [
     {
       name: "carrots",
@@ -114,7 +201,7 @@ export const sampleDataResult = {
 };
 
 //10oz onion and a tomato
-export const sampleNutritionData_2 = {
+export const sampleNutritionData_3 = {
   items: [
     {
       sugar_g: 13.3,
@@ -147,7 +234,7 @@ export const sampleNutritionData_2 = {
   ],
 };
 
-export const sampleDataResult_2 = {
+export const sampleDataResult_3 = {
   items: [
     {
       sugar_g: 13.3,
