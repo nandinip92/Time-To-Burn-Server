@@ -9,6 +9,7 @@ import {
 import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
 
 import * as exercisesService from "../services/exercises";
+import { calculateTotalCalories } from "./calculate_total_calories";
 
 //Function to call the actual API
 export async function getNutritionData(
@@ -20,7 +21,7 @@ export async function getNutritionData(
     if (nutrition.items.length === 0) {
       throw new Error("Cannot fetch Nutrition of the items from the API");
     }
-    const total_calories = await getTotalCalories(nutrition);
+    const total_calories = await calculateTotalCalories(nutrition);
     const exerciseInfo = await exercisesService.getExercises();
     if (exerciseInfo.length === 0) {
       throw new Error("Cannot fetch Exercise Info from Sequelize");
@@ -55,32 +56,8 @@ async function getNutritionDataFromAPI(
     console.log(error);
   }
   return nutritionResult;
+  //return sampleNutritionData_2;
 }
-
-//Function to calculate the total calories
-export async function getTotalCalories(
-  nutrition: IngredientsNutrition
-): Promise<number> {
-  const calories = nutrition.items.map((ingredient) => getCalories(ingredient));
-
-  const total_calories = calories
-    .map((x) => {
-      if (x) return x[1];
-    })
-    .reduce(
-      (accumulator, currenValue) =>
-        (accumulator as number) + (currenValue as number)
-    );
-
-  return total_calories as number;
-}
-
-const getCalories = (ingredient: Nutrition) => {
-  const calories = Object.entries(ingredient)
-    .filter(([key, value]) => key === "calories")
-    .pop();
-  return calories;
-};
 
 /*
 export async function getNutritionData(
