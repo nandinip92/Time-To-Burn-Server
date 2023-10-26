@@ -1,6 +1,9 @@
 import * as express from "express";
 import { Express } from "express";
+import fs from "fs";
+import path from "path";
 import * as nutritionInfoController from "../controllers/nutrition_data_controller";
+import * as exercisesInfoController from "../controllers/exercise_data_contoller";
 
 export function initialiseRoutes(app: Express) {
   console.log("🏗️  Setting up routers...");
@@ -43,9 +46,13 @@ function addAPIRoutes(app: Express) {
   //this route allows clients to GET nutrition
   console.log("📨  Adding GET nutrition route...");
   apiRouter.get(
-    "/nutrition/:ingredients",
+    "/nutrition/ingredients/:ingredients/exercise/:exercise",
     nutritionInfoController.getNutritionInfo
   );
+
+  //this route allows clients to GET exerciseInfo
+  console.log("📨  Adding GET exerciseInfo route...");
+  apiRouter.get("/exercises", exercisesInfoController.getExercisesInfo);
 
   console.log("🛠️  Applying API router to Express server...");
   app.use("/api", apiRouter);
