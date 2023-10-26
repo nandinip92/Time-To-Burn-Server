@@ -39,8 +39,12 @@ try {
         `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                  ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/exercises"                                                        ⭐`
       );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/ingredients/onion/exercise/cycling"                     ⭐`
+      );
+
       console.log(
         `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"           ⭐`
       );
