@@ -87,5 +87,14 @@ export type ExercisesType = {
   Running: Running;
   Walking: Walking;
   Swimming: Swimming;
-  "Aerobics,Dancing, Exercise Class": AerobicsDancing;
+  AerobicsAndDancing: AerobicsDancing;
 };
+
+export type ACTIVITIES =
+  | "Cycling"
+  | "Running"
+  | "Walking"
+  | "Swimming"
+  | "AerobicsAndDancing";
+
+export type ACTIVITY = Cycling | Running | Walking | Swimming | AerobicsDancing;
