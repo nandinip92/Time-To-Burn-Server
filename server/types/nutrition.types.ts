@@ -24,7 +24,6 @@ export type ExerciseType = {
 export type CalBurnRate = {
   items: Nutrition[];
   total_calories: number;
-  exercises: ExerciseType[];
 };
 
 export type TimeRequiresToBurn = {
