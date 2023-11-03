@@ -33,26 +33,36 @@ try {
       printNewLine();
 
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
       console.log(
-        `⭐    Health check at "http://localhost:${PORT}/health"                                                      ⭐`
+        `⭐    Health check at "http://localhost:${PORT}/health"                                                                                                                  ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/exercises"                                                        ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/exercises"                                                                                                                    ⭐`
+      );
+      printNewLine();
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                                                                              ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/ingredients/onion/exercise/cycling"                     ⭐`
-      );
-
-      console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"           ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"                                                                       ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"        ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"                                                                    ⭐`
+      );
+      printNewLine();
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion/exercise/Cycling/weight/130"                                                                                 ⭐`
       );
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3lb%20carrots%20and%20a%20chicken%20sandwich/exercise/Cycling/weight/170"                                          ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion%20and%20tomato%20and%20Chicken%20Sandwich/exercise/Cycling"                                       ⭐`
+      );
+      console.log(
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
     })
     .on("error", (error) => {
