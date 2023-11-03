@@ -3,6 +3,7 @@ import { Express } from "express";
 import fs from "fs";
 import path from "path";
 import * as nutritionInfoController from "../controllers/nutrition_data_controller";
+import * as timeToBurnController from "../controllers/time_to_burn_controller";
 import * as exercisesInfoController from "../controllers/exercise_data_contoller";
 
 export function initialiseRoutes(app: Express) {
@@ -46,8 +47,14 @@ function addAPIRoutes(app: Express) {
   //this route allows clients to GET nutrition
   console.log("📨  Adding GET nutrition route...");
   apiRouter.get(
-    "/nutrition/ingredients/:ingredients/exercise/:exercise",
+    "/nutrition/:ingredients",
     nutritionInfoController.getNutritionInfo
+  );
+  //this route allows clients to GET nutrition
+  console.log("📨  Adding GET time2burn route...");
+  apiRouter.get(
+    "/time2burn/ingredients/:ingredients/exercise/:exercise/weight/:weight",
+    timeToBurnController.processUserInputData
   );
 
   //this route allows clients to GET exerciseInfo
