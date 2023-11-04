@@ -82,7 +82,7 @@ const AerobicsDancingCategories = [
   "Ballroom dancing, slow",
   "Ballroom dancing, fast",
   "Teach aerobic classes (& participate)",
-];
+] as const;
 
 type CyclingCategoryType = (typeof CyclingCategories)[number];
 type RunningCategoryType = (typeof RunningCategories)[number];
