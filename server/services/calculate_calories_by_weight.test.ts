@@ -1,13 +1,13 @@
-import { calulateCaloriesPerHourByWeight } from "./calculate_calories_by_weight";
+import { calulateCaloriesPerHourForExerciseByWeight } from "./calculate_calories_by_weight";
 import { cyclingData, runningData } from "../data/sampleExerciseData";
 
-describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cycling) and the userWeight the function should return correct data", () => {
+describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise data(Cycling) and the userWeight the function should return correct data", () => {
   const exerciseInput = cyclingData.Cycling;
   test("Whe user weight is 155lbs", async () => {
     //Arrange
     const cyclingCalories_155lbs = {
       userWeight: "155lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Cycling, mountain bike, bmx": 598,
         "Cycling, <10 mph, leisure bicycling": 281,
         "Cycling, >20 mph, racing": 1126,
@@ -25,7 +25,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
     };
 
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       155
     );
@@ -37,7 +37,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
     //Arrange
     const cyclingCalories_190lbs = {
       userWeight: "190lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Cycling, mountain bike, bmx": 733,
         "Cycling, <10 mph, leisure bicycling": 345,
         "Cycling, >20 mph, racing": 1380,
@@ -54,7 +54,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
       },
     };
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       190
     );
@@ -66,7 +66,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
     //32kgs
     const cyclingCalories_70_5479lbs = {
       userWeight: "70.5479lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Cycling, mountain bike, bmx": 272,
         "Cycling, <10 mph, leisure bicycling": 128,
         "Cycling, >20 mph, racing": 512,
@@ -83,7 +83,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
       },
     };
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       70.5479
     );
@@ -92,13 +92,13 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data(Cyclin
   });
 });
 
-describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Running) and the userWeight the function should return correct data", () => {
+describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise data (Running) and the userWeight the function should return correct data", () => {
   const exerciseInput = runningData.Running;
   test("Whe user weight is 155lbs", async () => {
     //Arrange
     const caloriesRunning_205lbs = {
       userWeight: "205lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Running, 5 mph (12 minute mile)": 745,
         "Running, 5.2 mph (11.5 minute mile)": 838,
         "Running, 6 mph (10 min mile)": 931,
@@ -121,7 +121,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Runni
     };
 
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       205
     );
@@ -133,7 +133,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Runni
     //Arrange
     const caloriesRunning_468lbs = {
       userWeight: "468lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Running, 5 mph (12 minute mile)": 1700,
         "Running, 5.2 mph (11.5 minute mile)": 1913,
         "Running, 6 mph (10 min mile)": 2125,
@@ -155,7 +155,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Runni
       },
     };
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       468
     );
@@ -168,7 +168,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Runni
 
     const caloriesRunning_865_26lbs = {
       userWeight: "865.26lb",
-      caloriesPerHour: {
+      caloriesPerHourForExercise: {
         "Running, 5 mph (12 minute mile)": 3144,
         "Running, 5.2 mph (11.5 minute mile)": 3537,
         "Running, 6 mph (10 min mile)": 3929,
@@ -190,7 +190,7 @@ describe("calulateCaloriesPerHourByWeight -  When given the exercise data (Runni
       },
     };
     //Act
-    const functionOutput = await calulateCaloriesPerHourByWeight(
+    const functionOutput = await calulateCaloriesPerHourForExerciseByWeight(
       exerciseInput,
       865.26
     );

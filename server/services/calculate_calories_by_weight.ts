@@ -8,7 +8,7 @@ import { ACTIVITY, CaloriesPerWeight } from "../types/exercise.types";
  *  2. ELSE calculate the calories burned accoring to the given userWeight with reference to the closest value in the standard weights list
  */
 
-export async function calulateCaloriesPerHourByWeight(
+export async function calulateCaloriesPerHourForExerciseByWeight(
   exercise: ACTIVITY,
   userWeight: number
 ): Promise<CaloriesPerWeight> {
@@ -21,25 +21,25 @@ export async function calulateCaloriesPerHourByWeight(
         Math.abs(curr - userWeight) < Math.abs(prev - userWeight) ? curr : prev
       );
   const weightWithUnits = weight + "lb";
-  let caloriesPerHour = {};
+  let caloriesPerHourForExercise = {};
 
   if (userWeight === weight) {
     (Object.keys(exercise) as (keyof typeof exercise)[]).forEach((key) => {
-      caloriesPerHour[key] = exercise[key][weightWithUnits];
+      caloriesPerHourForExercise[key] = exercise[key][weightWithUnits];
     });
   } else {
     (Object.keys(exercise) as (keyof typeof exercise)[]).forEach((key) => {
-      caloriesPerHour[key] = Math.trunc(
+      caloriesPerHourForExercise[key] = Math.trunc(
         (exercise[key][weightWithUnits] * userWeight) / weight
       ) as keyof ACTIVITY;
     });
   }
 
-  //console.log("caloriesPerHour:", caloriesPerHour);
+  //console.log("caloriesPerHourForExercise:", caloriesPerHour);
 
   const caloriesPerHourByWeight: CaloriesPerWeight = {
     userWeight: userWeight + "lb",
-    caloriesPerHour: caloriesPerHour,
+    caloriesPerHourForExercise: caloriesPerHourForExercise,
   };
   return caloriesPerHourByWeight;
 }
