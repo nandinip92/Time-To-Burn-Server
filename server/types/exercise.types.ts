@@ -101,5 +101,5 @@ export type ACTIVITY = Cycling | Running | Walking | Swimming | AerobicsDancing;
 
 export type CaloriesPerWeight = {
   userWeight: string;
-  caloriesPerHour: ACTIVITY | {};
+  caloriesPerHourForExercise: ACTIVITY | {};
 };
