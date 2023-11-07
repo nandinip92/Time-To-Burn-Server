@@ -93,11 +93,14 @@ type AerobicsDancingCategoryType = (typeof AerobicsDancingCategories)[number];
 // type Cycling = {
 //   CyclingCategoryType: CaloriesByWeight;
 // };
-type Cycling = Record<CyclingCategoryType, CaloriesByWeight>;
-type Running = Record<RunningCategoryType, CaloriesByWeight>;
-type Walking = Record<WalkingCategoryType, CaloriesByWeight>;
-type Swimming = Record<SwimmingCategoriyType, CaloriesByWeight>;
-type AerobicsDancing = Record<AerobicsDancingCategoryType, CaloriesByWeight>;
+type Cycling = Record<CyclingCategoryType, CaloriesByWeight | number>;
+type Running = Record<RunningCategoryType, CaloriesByWeight | number>;
+type Walking = Record<WalkingCategoryType, CaloriesByWeight | number>;
+type Swimming = Record<SwimmingCategoriyType, CaloriesByWeight | number>;
+type AerobicsDancing = Record<
+  AerobicsDancingCategoryType,
+  CaloriesByWeight | number
+>;
 
 export type ExercisesType = {
   Cycling: Cycling;
@@ -118,5 +121,5 @@ export type ACTIVITY = Cycling | Running | Walking | Swimming | AerobicsDancing;
 
 export type CaloriesPerWeight = {
   userWeight: string;
-  caloriesPerHourForExercise: ACTIVITY | {};
+  caloriesPerHourForExercise: ACTIVITY; //ACTIVITY | {};
 };
