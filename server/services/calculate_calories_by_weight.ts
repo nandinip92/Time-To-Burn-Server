@@ -1,4 +1,4 @@
-import { ACTIVITY, CaloriesPerWeight } from "../types/exercise.types";
+import { ACTIVITY, ActivityCaloriesPerWeight } from "../types/exercise.types";
 
 /*
  * Following funtion is used to get the calories burned per hour for the given specific exercise category
@@ -11,7 +11,7 @@ import { ACTIVITY, CaloriesPerWeight } from "../types/exercise.types";
 export async function calulateCaloriesPerHourForExerciseByWeight(
   exercise: ACTIVITY,
   user_weight: number
-): Promise<CaloriesPerWeight> {
+): Promise<ActivityCaloriesPerWeight> {
   const standardWeights = [130, 155, 180, 205];
   //If user_weight is in the standardWeights list the assigh that weight
   // ELSE finding the closest value to the user_weight in the standardWeights list
@@ -46,9 +46,9 @@ export async function calulateCaloriesPerHourForExerciseByWeight(
 
   //  console.log("calories_per_hour_for_exercise:", calories_per_hour_for_exercise);
 
-  const calories_per_hour_by_weight: CaloriesPerWeight = {
+  const calories_per_hour_by_weight: ActivityCaloriesPerWeight = {
     user_weight: user_weight + "lb",
-    calories_per_hour_for_exercise: calories_per_hour_for_exercise_obj,
+    calories_per_hour: calories_per_hour_for_exercise_obj,
   };
   return calories_per_hour_by_weight;
 }
