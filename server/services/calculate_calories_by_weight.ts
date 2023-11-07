@@ -21,25 +21,32 @@ export async function calulateCaloriesPerHourForExerciseByWeight(
         Math.abs(curr - userWeight) < Math.abs(prev - userWeight) ? curr : prev
       );
   const weightWithUnits = weight + "lb";
-  let caloriesPerHourForExercise = {};
 
+  let caloriesPerHourForExercise = new Map<keyof typeof exercise, number>();
+  const exerciseKeys = Object.keys(exercise) as (keyof typeof exercise)[];
   if (userWeight === weight) {
-    (Object.keys(exercise) as (keyof typeof exercise)[]).forEach((key) => {
-      caloriesPerHourForExercise[key] = exercise[key][weightWithUnits];
+    exerciseKeys.forEach((key) => {
+      caloriesPerHourForExercise.set(key, exercise[key][weightWithUnits]);
     });
   } else {
-    (Object.keys(exercise) as (keyof typeof exercise)[]).forEach((key) => {
-      caloriesPerHourForExercise[key] = Math.trunc(
+    exerciseKeys.forEach((key) => {
+      const value = Math.trunc(
         (exercise[key][weightWithUnits] * userWeight) / weight
-      ) as keyof ACTIVITY;
+      );
+      caloriesPerHourForExercise.set(key, value);
     });
   }
 
-  //console.log("caloriesPerHourForExercise:", caloriesPerHour);
+  // Object.fromEntries to convert a Map to an Object
+  const caloriesPerHourForExerciseObj = Object.fromEntries(
+    caloriesPerHourForExercise
+  ) as ACTIVITY;
+
+  //  console.log("caloriesPerHourForExercise:", caloriesPerHourForExercise);
 
   const caloriesPerHourByWeight: CaloriesPerWeight = {
     userWeight: userWeight + "lb",
-    caloriesPerHourForExercise: caloriesPerHourForExercise,
+    caloriesPerHourForExercise: caloriesPerHourForExerciseObj,
   };
   return caloriesPerHourByWeight;
 }
