@@ -2,16 +2,14 @@ import * as dotenv from "dotenv";
 import fetch from "node-fetch";
 import {
   IngredientsNutrition,
-  Nutrition,
   TotalCaloriesWithNutirion,
 } from "../types/nutrition.types";
 
 import {
   sampleNutritionData,
   sampleNutritionData_2,
-} from "../data/sampleNutritionData";
+} from "../data/sample_nutrition_data";
 
-import * as exercisesService from "./calories_for_exercises";
 import { calculateTotalCalories } from "./calculate_total_calories";
 
 //Function to call the actual API
