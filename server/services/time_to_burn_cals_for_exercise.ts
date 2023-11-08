@@ -1,10 +1,3 @@
-import {
-  CaloriesDataType,
-  IngredientsNutrition,
-  Nutrition,
-  TotalCaloriesWithNutirion,
-} from "../types/nutrition.types";
-import * as nutritionService from "../services/nutrition";
 import * as exercisesService from "./calories_for_exercises";
 import * as calculateTimeService from "./get_time_to_burn";
 import { getCaloriesForEachIngredient } from "./calories_for_ingredients";
