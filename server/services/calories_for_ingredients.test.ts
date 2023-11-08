@@ -2,7 +2,7 @@ import { getCaloriesForEachIngredient } from "./calories_for_ingredients";
 import {
   sampleCaloriesData,
   sampleNutritionWithTotalCalories,
-} from "../data/sampleData";
+} from "../data/sampleNutritionData";
 import * as nutritionService from "./nutrition";
 import {
   CaloriesDataType,

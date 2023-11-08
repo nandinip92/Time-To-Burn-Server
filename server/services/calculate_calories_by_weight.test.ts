@@ -7,7 +7,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
     //Arrange
     const cyclingCalories_155lbs = {
       userWeight: "155lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Cycling, mountain bike, bmx": 598,
         "Cycling, <10 mph, leisure bicycling": 281,
         "Cycling, >20 mph, racing": 1126,
@@ -37,7 +37,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
     //Arrange
     const cyclingCalories_190lbs = {
       userWeight: "190lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Cycling, mountain bike, bmx": 733,
         "Cycling, <10 mph, leisure bicycling": 345,
         "Cycling, >20 mph, racing": 1380,
@@ -66,7 +66,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
     //32kgs
     const cyclingCalories_70_5479lbs = {
       userWeight: "70.5479lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Cycling, mountain bike, bmx": 272,
         "Cycling, <10 mph, leisure bicycling": 128,
         "Cycling, >20 mph, racing": 512,
@@ -98,7 +98,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
     //Arrange
     const caloriesRunning_205lbs = {
       userWeight: "205lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Running, 5 mph (12 minute mile)": 745,
         "Running, 5.2 mph (11.5 minute mile)": 838,
         "Running, 6 mph (10 min mile)": 931,
@@ -133,7 +133,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
     //Arrange
     const caloriesRunning_468lbs = {
       userWeight: "468lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Running, 5 mph (12 minute mile)": 1700,
         "Running, 5.2 mph (11.5 minute mile)": 1913,
         "Running, 6 mph (10 min mile)": 2125,
@@ -168,7 +168,7 @@ describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise 
 
     const caloriesRunning_865_26lbs = {
       userWeight: "865.26lb",
-      caloriesPerHourForExercise: {
+      caloriesPerHour: {
         "Running, 5 mph (12 minute mile)": 3144,
         "Running, 5.2 mph (11.5 minute mile)": 3537,
         "Running, 6 mph (10 min mile)": 3929,

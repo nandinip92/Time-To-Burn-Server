@@ -6,7 +6,10 @@ import {
   TotalCaloriesWithNutirion,
 } from "../types/nutrition.types";
 
-import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
+import {
+  sampleNutritionData,
+  sampleNutritionData_2,
+} from "../data/sampleNutritionData";
 
 import * as exercisesService from "./calories_for_exercises";
 import { calculateTotalCalories } from "./calculate_total_calories";
