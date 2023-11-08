@@ -19,7 +19,7 @@ export const sampleNutritionData = {
 };
 export const sampleNutritionWithTotalCalories = {
   items: sampleNutritionData.items,
-  total_calories: 44.7,
+  totalCalories: 44.7,
 };
 export const sampleCaloriesData = {
   caloriesPerIngredient: [
@@ -28,7 +28,7 @@ export const sampleCaloriesData = {
       calories: 44.7,
     },
   ],
-  total_calories: 44.7,
+  totalCalories: 44.7,
 };
 
 //3lb carrots and a chicken sandwich
@@ -67,7 +67,7 @@ export const sampleNutritionData_2 = {
 
 export const sampleNutritionWithTotalCalories_2 = {
   items: sampleNutritionData_2.items,
-  total_calories: 721.7,
+  totalCalories: 721.7,
 };
 
 export const sampleCaloriesData_2 = {
@@ -81,7 +81,7 @@ export const sampleCaloriesData_2 = {
       calories: 243.9,
     },
   ],
-  total_calories: 721.7,
+  totalCalories: 721.7,
 };
 
 //10oz onion and a tomato
@@ -120,7 +120,7 @@ export const sampleNutritionData_3 = {
 
 export const sampleNutritionWithTotalCalories_3 = {
   items: sampleNutritionData_3.items,
-  total_calories: 144.9,
+  totalCalories: 144.9,
 };
 
 export const sampleCaloriesData_3 = {
@@ -134,5 +134,5 @@ export const sampleCaloriesData_3 = {
       calories: 18.2,
     },
   ],
-  total_calories: 144.9,
+  totalCalories: 144.9,
 };
