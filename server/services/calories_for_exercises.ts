@@ -6,7 +6,7 @@ import { Activities, ACTIVITY, ExercisesType } from "../types/exercise.types";
 //following funtion is to get all the exercises data
 export const getExercisesData = async (): Promise<ExercisesType | string> => {
   try {
-    const filePath = `../data/ActivitiesList.json`;
+    const filePath = `../data/activities_list.json`;
     const rawData = fs.readFileSync(path.resolve(__dirname, filePath), "utf8");
     const jsonData: ExercisesType = JSON.parse(rawData);
     return jsonData;
