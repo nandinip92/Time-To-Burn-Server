@@ -38,7 +38,7 @@ export async function calculateTimeToBurnTotalCalories(
   const activityName = Object.entries(exerciseCaloriesPerHour);
   const timeToBurn: TimeToBurnPerActivity = activityName.map(
     ([activity, calories]) => {
-      const time: Time = getTime(calories as number, totalCalories);
+      const time: Time = calculateTime(calories as number, totalCalories);
       const activityName = activity as keyof typeof exerciseCaloriesPerHour;
       return { activity: activityName, timeToBurn: time };
     }
@@ -50,7 +50,7 @@ export async function calculateTimeToBurnTotalCalories(
  * Following funtion will take the caloriesPerHour data for each exercise and
  * calculate time to burn in hourns, minutes and seconds
  */
-const getTime = (
+const calculateTime = (
   exerciseCaloriesPerHour: number,
   totalCalories: number
 ): Time => {
