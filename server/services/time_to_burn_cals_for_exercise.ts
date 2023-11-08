@@ -27,6 +27,9 @@ export async function processingUserInputToCalculateTimeToBurn(
     const exerciseData = await exercisesService.getSpecificExercisesData(
       exercise
     );
+    if (typeof exerciseData === "string") {
+      throw new Error(exerciseData);
+    }
     if (exerciseData === undefined) {
       throw new Error("Cannot fetch exercise data from ActiviesList.json");
     }
