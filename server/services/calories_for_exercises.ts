@@ -4,11 +4,15 @@ import path from "path";
 import { Activities, ACTIVITY, ExercisesType } from "../types/exercise.types";
 
 //following funtion is to get all the exercises data
-export const getExercisesData = async (): Promise<ExercisesType> => {
-  const filePath = `../data/ActivitiesList.json`;
-  const rawData = fs.readFileSync(path.resolve(__dirname, filePath), "utf8");
-  const jsonData: ExercisesType = JSON.parse(rawData);
-  return jsonData;
+export const getExercisesData = async (): Promise<ExercisesType | string> => {
+  try {
+    const filePath = `../data/ActivitiesList.json`;
+    const rawData = fs.readFileSync(path.resolve(__dirname, filePath), "utf8");
+    const jsonData: ExercisesType = JSON.parse(rawData);
+    return jsonData;
+  } catch (error) {
+    return (error as Error).message;
+  }
 };
 
 /*
@@ -19,9 +23,15 @@ export const getExercisesData = async (): Promise<ExercisesType> => {
  */
 export const getSpecificExercisesData = async (
   exercise: Activities
-): Promise<ACTIVITY | undefined> => {
+): Promise<ACTIVITY | string | undefined> => {
   const exercisesJSONData = await getExercisesData();
-  if (exercisesJSONData.hasOwnProperty(exercise))
+  if (typeof exercisesJSONData === "string") {
+    return exercisesJSONData;
+  }
+  if (
+    typeof exercisesJSONData !== "string" &&
+    exercisesJSONData.hasOwnProperty(exercise)
+  )
     return exercisesJSONData[exercise];
   else return undefined;
 };
