@@ -1,5 +1,5 @@
 import { calulateCaloriesPerHourForExerciseByWeight } from "./calculate_calories_by_weight";
-import { cyclingData, runningData } from "../data/sampleExerciseData";
+import { cyclingData, runningData } from "../data/sample_exercise_data";
 
 describe("calulateCaloriesPerHourForExerciseByWeight -  When given the exercise data(Cycling) and the userWeight the function should return correct data", () => {
   const exerciseInput = cyclingData.Cycling;
