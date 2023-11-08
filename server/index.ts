@@ -56,10 +56,10 @@ try {
         `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion/exercise/Cycling/weight/130"                                                                                 ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3lb%20carrots%20and%20a%20chicken%20sandwich/exercise/Cycling/weight/170"                                          ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3lb%20carrots%20and%203kg%20chicken/exercise/Running/weight/170"                                          ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion%20and%20tomato%20and%20Chicken%20Sandwich/exercise/Cycling"                                       ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion%20and%20tomato%20and%20Chicken%20Sandwich/exercise/Swimming/weight/340"                                       ⭐`
       );
       console.log(
         `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
