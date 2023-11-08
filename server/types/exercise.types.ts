@@ -119,16 +119,7 @@ export type Activities =
 
 export type ACTIVITY = Cycling | Running | Walking | Swimming | AerobicsDancing;
 
-export type CaloriesPerWeight = {
-  user_weight: string;
-  calories_per_hour_for_exercise: ACTIVITY; //ACTIVITY | {};
-};
-
-export type TimeToBurn = {
-  activity: keyof ACTIVITY;
-  time_to_burn: {
-    hours: number;
-    minutes: number;
-    seconds: number;
-  };
+export type ActivityCaloriesPerWeight = {
+  userWeight: string;
+  caloriesPerHour: ACTIVITY; //ACTIVITY | {};
 };

@@ -28,7 +28,7 @@ export async function getCaloriesForEachIngredient(
       });
     const caloriesData: CaloriesDataType = {
       caloriesPerIngredient: caloriesPerIngredient,
-      total_calories: nutrition.total_calories,
+      totalCalories: nutrition.totalCalories,
     };
     return caloriesData;
   } catch (error) {

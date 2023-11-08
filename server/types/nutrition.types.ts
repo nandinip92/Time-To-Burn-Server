@@ -19,7 +19,7 @@ export type IngredientsNutrition = {
 
 export type TotalCaloriesWithNutirion = {
   items: Nutrition[];
-  total_calories: number;
+  totalCalories: number;
 };
 
 export type CaloriesPerIngredient = {
@@ -29,5 +29,5 @@ export type CaloriesPerIngredient = {
 
 export type CaloriesDataType = {
   caloriesPerIngredient: Array<CaloriesPerIngredient>;
-  total_calories: number;
+  totalCalories: number;
 };

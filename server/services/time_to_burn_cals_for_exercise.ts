@@ -1,11 +1,13 @@
 import {
+  CaloriesDataType,
   IngredientsNutrition,
   Nutrition,
-  CalBurnRate,
+  TotalCaloriesWithNutirion,
 } from "../types/nutrition.types";
 import * as nutritionService from "../services/nutrition";
-import * as exercisesService from "../services/exercises_and_calories";
+import * as exercisesService from "./calories_for_exercises";
 import * as calculateTimeService from "../services/calculate_time";
+import { getCaloriesForEachIngredient } from "./calories_for_ingredients";
 
 import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
 import { Activities } from "../types/exercise.types";
@@ -15,12 +17,11 @@ export async function processingUserInputToCalculateTimeToBurn(
   ingredients: string,
   exercise: Activities,
   weight: number
-): Promise<CalBurnRate | string> {
-  const url = process.env.API_URL + ingredients;
+): Promise<TotalCaloriesWithNutirion | string> {
   try {
-    const nutrition = await nutritionService.getNutritionData(url);
-    if (typeof nutrition === "string" || nutrition.items.length === 0) {
-      throw new Error("Cannot fetch Nutrition of the items from the API");
+    const ingredientCalories = await getCaloriesForEachIngredient(ingredients);
+    if (typeof ingredientCalories === "string") {
+      throw new Error(ingredientCalories);
     }
     const exerciseData = await exercisesService.getSpecificExercisesData(
       exercise
@@ -28,8 +29,8 @@ export async function processingUserInputToCalculateTimeToBurn(
     if (exerciseData === undefined) {
       throw new Error("Cannot fetch exercise data from ActiviesList.json");
     }
-    const time_to_burn = await calculateTimeService.calculateTime(
-      nutrition.total_calories,
+    const timeToBurn = await calculateTimeService.calculateTime(
+      ingredientCalories as any,
       exerciseData,
       weight
     );
