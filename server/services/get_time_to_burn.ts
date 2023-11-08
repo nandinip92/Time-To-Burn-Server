@@ -25,7 +25,7 @@ export async function getTimeToBurn(
     const timeToBurnTotalCalories: TimeToBurnPerActivity =
       await calculateTimeToBurnTotalCalories(totalCalories, caloriesPerHour);
 
-    console.log("exerciseCaloriesAndWeight", exerciseCaloriesAndWeight);
+    //console.log("exerciseCaloriesAndWeight", exerciseCaloriesAndWeight);
     //console.log("timeToBurnTotalCalories", timeToBurnTotalCalories);
     return timeToBurnTotalCalories;
   } catch (error) {
