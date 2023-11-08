@@ -6,7 +6,7 @@ import {
 } from "../types/nutrition.types";
 import * as nutritionService from "../services/nutrition";
 import * as exercisesService from "./calories_for_exercises";
-import * as calculateTimeService from "../services/calculate_time";
+import * as calculateTimeService from "./get_time_to_burn";
 import { getCaloriesForEachIngredient } from "./calories_for_ingredients";
 
 import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
