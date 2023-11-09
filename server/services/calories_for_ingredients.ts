@@ -3,7 +3,7 @@ import {
   CaloriesPerIngredient,
   IngredientsNutrition,
   Nutrition,
-  TotalCaloriesWithNutirion,
+  NutirionAndTotalCalories,
 } from "../types/nutrition.types";
 import * as nutritionService from "./nutrition";
 

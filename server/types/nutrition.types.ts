@@ -17,7 +17,7 @@ export type IngredientsNutrition = {
   items: Nutrition[];
 };
 
-export type TotalCaloriesWithNutirion = {
+export type NutirionAndTotalCalories = {
   items: Nutrition[];
   totalCalories: number;
 };

@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 import fetch from "node-fetch";
 import {
   IngredientsNutrition,
-  TotalCaloriesWithNutirion,
+  NutirionAndTotalCalories,
 } from "../types/nutrition.types";
 
 import {
@@ -15,7 +15,7 @@ import { calculateTotalCalories } from "./calculate_total_calories";
 //Function to call the actual API
 export async function getNutritionData(
   ingredients: string
-): Promise<TotalCaloriesWithNutirion | string> {
+): Promise<NutirionAndTotalCalories | string> {
   const url = process.env.API_URL + ingredients;
   try {
     const nutrition = await getNutritionDataFromAPI(url);
@@ -23,7 +23,7 @@ export async function getNutritionData(
       throw new Error("Cannot fetch Nutrition of the items from the API");
     }
     const totalCalories = await calculateTotalCalories(nutrition);
-    const result: TotalCaloriesWithNutirion = {
+    const result: NutirionAndTotalCalories = {
       items: nutrition.items,
       totalCalories: totalCalories,
     };

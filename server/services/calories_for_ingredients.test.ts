@@ -6,7 +6,7 @@ import {
 import * as nutritionService from "./nutrition";
 import {
   CaloriesDataType,
-  TotalCaloriesWithNutirion,
+  NutirionAndTotalCalories,
 } from "../types/nutrition.types";
 jest.mock("./nutrition");
 afterEach(() => {
