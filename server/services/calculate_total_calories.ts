@@ -9,9 +9,9 @@ export async function calculateTotalCalories(
   });
   //console.log("Calories--->", calories);
 
-  const total_calories = calories.reduce(
+  const totalCalories = calories.reduce(
     (accumulator, currenValue) =>
       (accumulator as number) + (currenValue as number)
   );
-  return total_calories as number;
+  return totalCalories as number;
 }

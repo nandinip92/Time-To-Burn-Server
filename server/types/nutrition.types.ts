@@ -17,23 +17,17 @@ export type IngredientsNutrition = {
   items: Nutrition[];
 };
 
-export type ExerciseType = {
-  name: string;
-  calsPerHour: number;
-};
-export type CalBurnRate = {
+export type NutirionAndTotalCalories = {
   items: Nutrition[];
-  total_calories: number;
-  exercises: ExerciseType[];
+  totalCalories: number;
 };
 
-export type TimeRequiresToBurn = {
-  seconds: number;
-  minutes: number;
-  hours: number;
-};
-export type ExerciseTypeWithTime = {
+export type CaloriesPerIngredient = {
   name: string;
-  calsPerHour: number;
-  time_to_burn_total_cals: TimeRequiresToBurn;
+  calories: number;
+};
+
+export type CaloriesDataType = {
+  caloriesPerIngredient: Array<CaloriesPerIngredient>;
+  totalCalories: number;
 };

@@ -29,6 +29,7 @@
     "@types/node-fetch": "^2.6.5",
     "@types/supertest": "^2.0.12",
     "cors": "^2.8.5",
+    "fs": "^0.0.1-security",
     "jest": "^29.7.0",
     "sequelize-mock": "^0.10.2",
     "supertest": "^6.3.3",

@@ -1,22 +1,15 @@
 import request from "supertest";
 import { app } from "../index";
-import { populateDummyData } from "../database/database_seed";
-import { teardown } from "../database/database";
 import * as nutritionService from "../services/nutrition";
-import { sampleDataResult, sampleNutritionData } from "../data/sampleData";
-import { CalBurnRate } from "../types/nutrition.types";
+import { NutirionAndTotalCalories } from "../types/nutrition.types";
+import {
+  sampleNutritionWithTotalCalories,
+  sampleNutritionWithTotalCalories_2,
+} from "../data/sample_nutrition_data";
 
 jest.mock("../services/nutrition");
-//jest.mock("../services/exercises");
-beforeAll(async () => {
-  await populateDummyData();
-});
-
 afterEach(async () => {
   jest.clearAllMocks();
-});
-afterAll(async () => {
-  await teardown();
 });
 
 describe("GET /api/nutrition/:ingredients endpoint", () => {
@@ -24,7 +17,9 @@ describe("GET /api/nutrition/:ingredients endpoint", () => {
     //Arrange
     const mockGetNutrition = jest
       .spyOn(nutritionService, "getNutritionData")
-      .mockResolvedValue(sampleDataResult as CalBurnRate);
+      .mockResolvedValue(
+        sampleNutritionWithTotalCalories as NutirionAndTotalCalories
+      );
     //Act
     const res = await request(app).get("/api/nutrition/onion");
     //Assert
@@ -36,11 +31,27 @@ describe("GET /api/nutrition/:ingredients endpoint", () => {
     //Arrange
     const mockGetNutrition = jest
       .spyOn(nutritionService, "getNutritionData")
-      .mockResolvedValue(sampleDataResult as CalBurnRate);
+      .mockResolvedValue(
+        sampleNutritionWithTotalCalories_2 as NutirionAndTotalCalories
+      );
     //Act
     const res = await request(app).get("/api/nutrition/onion");
     //Assert
-    expect(res.body).toEqual(sampleDataResult);
+    expect(res.body).toEqual(sampleNutritionWithTotalCalories_2);
     expect(res.statusCode).toEqual(200);
+  });
+  test("status code successful 500 when unable to fetch data from the API", async () => {
+    //Arrange
+    const errorMessage = "Cannot fetch Nutrition of the items from the API";
+    const output = { success: false, message: errorMessage };
+    const mockGetNutrition = jest
+      .spyOn(nutritionService, "getNutritionData")
+      .mockResolvedValue(errorMessage);
+    //Act
+    const res = await request(app).get("/api/nutrition/onion");
+    //Assert
+
+    expect(res.statusCode).toEqual(500);
+    expect(res.body).toStrictEqual(output);
   });
 });

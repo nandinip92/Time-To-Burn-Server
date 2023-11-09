@@ -2,35 +2,30 @@ import * as dotenv from "dotenv";
 import fetch from "node-fetch";
 import {
   IngredientsNutrition,
-  Nutrition,
-  CalBurnRate,
+  NutirionAndTotalCalories,
 } from "../types/nutrition.types";
 
-import { sampleNutritionData, sampleNutritionData_2 } from "../data/sampleData";
+import {
+  sampleNutritionData,
+  sampleNutritionData_2,
+} from "../data/sample_nutrition_data";
 
-import * as exercisesService from "../services/exercises";
 import { calculateTotalCalories } from "./calculate_total_calories";
 
 //Function to call the actual API
 export async function getNutritionData(
   ingredients: string
-): Promise<CalBurnRate | string> {
+): Promise<NutirionAndTotalCalories | string> {
   const url = process.env.API_URL + ingredients;
   try {
     const nutrition = await getNutritionDataFromAPI(url);
     if (nutrition.items.length === 0) {
       throw new Error("Cannot fetch Nutrition of the items from the API");
     }
-    const total_calories = await calculateTotalCalories(nutrition);
-    const exerciseInfo = await exercisesService.getExercises();
-    if (exerciseInfo.length === 0) {
-      throw new Error("Cannot fetch Exercise Info from Sequelize");
-    }
-    await exercisesService.getTimeToBurn(exerciseInfo, total_calories);
-    const result: CalBurnRate = {
+    const totalCalories = await calculateTotalCalories(nutrition);
+    const result: NutirionAndTotalCalories = {
       items: nutrition.items,
-      total_calories: total_calories,
-      exercises: exerciseInfo,
+      totalCalories: totalCalories,
     };
     return result;
   } catch (error) {
@@ -56,15 +51,12 @@ async function getNutritionDataFromAPI(
     console.log(error);
   }
   return nutritionResult;
-  //return sampleNutritionData_2;
 }
 
-/*
-export async function getNutritionData(
-  ingredients: string
-): Promise<IngredientsNutrition> {
-  const url = process.env.API_URL + ingredients;
-  return await getNutritionDataFromAPI(url);
-  //return sampleNutritionData; //Sample data for tesing the functions while developing
-}
-*/
+// export async function getNutritionDataFromAPI(
+//   ingredients: string
+// ): Promise<IngredientsNutrition> {
+//   const url = process.env.API_URL + ingredients;
+//   //return await getNutritionDataFromAPI(url);
+//   return sampleNutritionData_2; //Sample data for tesing the functions while developing
+// }
