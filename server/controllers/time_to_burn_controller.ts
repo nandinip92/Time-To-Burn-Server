@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as timeToBurnService from "../services/time_to_burn_cals_for_exercise";
-import { CalBurnRate } from "../types/nutrition.types";
+import { NutirionAndTotalCalories } from "../types/nutrition.types";
 import { Activities } from "../types/exercise.types";
 
 export const processUserInputData = async (req: Request, res: Response) => {
