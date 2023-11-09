@@ -31,59 +31,38 @@ export const sampleCaloriesData = {
   totalCalories: 44.7,
 };
 
-//3lb carrots and a chicken sandwich
+//3kg chicken
 export const sampleNutritionData_2 = {
   items: [
     {
-      name: "carrots",
-      calories: 477.8,
-      serving_size_g: 1360.7759999999998,
-      fat_total_g: 2.3,
-      fat_saturated_g: 0.3,
-      protein_g: 10.3,
-      sodium_mg: 775,
-      potassium_mg: 410,
-      cholesterol_mg: 0,
-      carbohydrates_total_g: 110.2,
-      fiber_g: 40.7,
-      sugar_g: 46.7,
-    },
-    {
-      name: "chicken sandwich",
-      calories: 243.9,
-      serving_size_g: 100,
-      fat_total_g: 11.2,
-      fat_saturated_g: 2.1,
-      protein_g: 16.2,
-      sodium_mg: 767,
-      potassium_mg: 184,
-      cholesterol_mg: 35,
-      carbohydrates_total_g: 20.9,
-      fiber_g: 1.4,
-      sugar_g: 3.6,
+      name: "chicken",
+      calories: 6679.2,
+      serving_size_g: 3000,
+      fat_total_g: 387,
+      fat_saturated_g: 109.7,
+      protein_g: 711.9,
+      sodium_mg: 2168,
+      potassium_mg: 5374,
+      cholesterol_mg: 2763,
+      carbohydrates_total_g: 1.4,
+      fiber_g: 0,
+      sugar_g: 0,
     },
   ],
 };
-
 export const sampleNutritionWithTotalCalories_2 = {
   items: sampleNutritionData_2.items,
-  totalCalories: 721.7,
+  totalCalories: 6679.2,
 };
-
 export const sampleCaloriesData_2 = {
   caloriesPerIngredient: [
     {
-      name: "carrots",
-      calories: 477.8,
-    },
-    {
-      name: "chicken sandwich",
-      calories: 243.9,
+      name: "chicken",
+      calories: 6679.2,
     },
   ],
-  totalCalories: 721.7,
+  totalCalories: 6679.2,
 };
-
 //10oz onion and a tomato
 export const sampleNutritionData_3 = {
   items: [
@@ -135,4 +114,57 @@ export const sampleCaloriesData_3 = {
     },
   ],
   totalCalories: 144.9,
+};
+
+//3lb carrots and a chicken sandwich
+export const sampleNutritionData_5 = {
+  items: [
+    {
+      name: "carrots",
+      calories: 477.8,
+      serving_size_g: 1360.7759999999998,
+      fat_total_g: 2.3,
+      fat_saturated_g: 0.3,
+      protein_g: 10.3,
+      sodium_mg: 775,
+      potassium_mg: 410,
+      cholesterol_mg: 0,
+      carbohydrates_total_g: 110.2,
+      fiber_g: 40.7,
+      sugar_g: 46.7,
+    },
+    {
+      name: "chicken sandwich",
+      calories: 243.9,
+      serving_size_g: 100,
+      fat_total_g: 11.2,
+      fat_saturated_g: 2.1,
+      protein_g: 16.2,
+      sodium_mg: 767,
+      potassium_mg: 184,
+      cholesterol_mg: 35,
+      carbohydrates_total_g: 20.9,
+      fiber_g: 1.4,
+      sugar_g: 3.6,
+    },
+  ],
+};
+
+export const sampleNutritionWithTotalCalories_5 = {
+  items: sampleNutritionData_2.items,
+  totalCalories: 721.7,
+};
+
+export const sampleCaloriesData_5 = {
+  caloriesPerIngredient: [
+    {
+      name: "carrots",
+      calories: 477.8,
+    },
+    {
+      name: "chicken sandwich",
+      calories: 243.9,
+    },
+  ],
+  totalCalories: 721.7,
 };
