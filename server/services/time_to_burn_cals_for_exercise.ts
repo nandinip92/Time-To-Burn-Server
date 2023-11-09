@@ -1,4 +1,4 @@
-import * as exercisesService from "./calories_for_exercises";
+import * as exercisesService from "./calories_burned_during_exercises";
 import * as calculateTimeService from "./get_time_to_burn";
 import { getCaloriesForEachIngredient } from "./calories_for_ingredients";
 import { Activities } from "../types/exercise.types";
