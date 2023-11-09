@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import * as nutritionService from "../services/nutrition";
-import { CalBurnRate } from "../types/nutrition.types";
 
 export const getNutritionInfo = async (req: Request, res: Response) => {
   const ingredients = req.params.ingredients;
