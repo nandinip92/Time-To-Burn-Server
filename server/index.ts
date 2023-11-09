@@ -33,36 +33,41 @@ try {
       printNewLine();
 
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
       console.log(
-        `⭐    Health check at "http://localhost:${PORT}/health"                                                                                                                  ⭐`
-      );
-      console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/exercises"                                                                                                                    ⭐`
+        `⭐    Health check at "http://localhost:${PORT}/health"                                                                                                      ⭐`
       );
       printNewLine();
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                                                                              ⭐`
-      );
-      console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"                                                                       ⭐`
-      );
-      console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion%20and%20tomato%20and%20Chicken%20Sandwich"                                                                    ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/exercises"                                                                                                        ⭐`
       );
       printNewLine();
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion/exercise/Cycling/weight/130"                                                                                 ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/onion"                                                                                                  ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3lb%20carrots%20and%203kg%20chicken/exercise/Running/weight/170"                                          ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3kg%20chicken"                                                                              ⭐`
       );
       console.log(
-        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion%20and%20tomato%20and%20Chicken%20Sandwich/exercise/Swimming/weight/340"                                       ⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/10oz%20onion%20and%20a%20tomato"                                                                        ⭐`
       );
       console.log(
-        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
+        `⭐    Or try "http://localhost:${PORT}/api/nutrition/3lb%20carrots%20and%20a%20chicken%20sandwich"                                                           ⭐`
+      );
+
+      printNewLine();
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/onion/exercise/Cycling/weight/130"                                                          ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/3kg%20chicken/exercise/Running/weight/170"                                                  ⭐`
+      );
+      console.log(
+        `⭐    Or try "http://localhost:${PORT}/api/time2burn/ingredients/10oz%20onion%20and%20a%20tomato/exercise/Swimming/weight/340"                               ⭐`
+      );
+      console.log(
+        `⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐`
       );
     })
     .on("error", (error) => {
